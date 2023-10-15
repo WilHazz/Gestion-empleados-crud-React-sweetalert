@@ -1,38 +1,576 @@
+ @import url('https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans&family=Oswald&family=Pacifico&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+:root{
+  --boder-color: rgb(61, 61, 61);
+  --background: rgb(48, 48, 48);
+  --color_Text: rgb(221, 221, 221);
+  --Hover-border-input: rgb(21, 90, 155);
+  --border-input: rgb(185, 185, 185);
+  --background_Laberform: rgb(66, 66, 66);
+  --background_table:rgb(19, 19, 19);
+  --color_textTitle_Thead: rgb(218, 213, 213);
+
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  font-family: 'Roboto';
+}
+
+.datos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* position: relative; */
+}
+
+/* .datos input{
+  width: 300px;
+  height: 30px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--boder-color);
+  font-family: 'Roboto', sans-serif;
+  background: var(--boder-color);
+  color: var(--color_Text);
+  margin:10px;
+  padding: 10px;
+}
+input::placeholder{
+  color: var(--color_Text);
+} */
+
+
+/* .datos .btn_registrar{
+  width: 320px;
+  height: 40px;
+  margin-top: 5px;
+} */
+
+  /* Botones */
+.botones{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 30px 0px;
+  grid-gap: 10px;
+}
+.btn_registrar {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #2678e4;
+  color: #2678e4;
+  /* margin-right: 15px; */
+}
+.btn_registrar:hover {
+  color: #fff;
+}
+.btn_registrar:hover:after {
+  height: 100%;
+}
+.btn_registrar:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #2678e4;
+}
+    /* Boton Editar */
+.btn_editar {
+  min-width: 80px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #57cc99;
+  color: #57cc99;
 }
 
-.App-link {
-  color: #61dafb;
+.btn_editar:hover {
+  color: #fff;
+}
+.btn_editar:hover:after {
+  height: 100%;
+}
+.btn_editar:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #57cc99;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    /* Boton Eliminar */
+.btn_eliminar {
+  min-width: 80px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #df1d0f;
+  color: #df1d0f;
+  margin-left: 4px;
+}
+.btn_eliminar:hover {
+  color: #fff;
+}
+.btn_eliminar:hover:after {
+  height: 100%;
+}
+.btn_eliminar:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #df1d0f;
+}
+
+    /* Boton Actualizar - Cancelar */
+.btn_Actualizar-cancelar {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #1f477a;
+  color: #1f477a;
+  margin-left: 10px;
+}
+.btn_Actualizar-cancelar:hover {
+  color: #fff;
+}
+.btn_Actualizar-cancelar:hover:after {
+  height: 100%;
+}
+.btn_Actualizar-cancelar:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #1f477a;
+}    
+
+  /* Inputs green */
+.form{
+  display: flex;
+  position: relative;
+  width: 24rem;
+  height: 3rem;
+  margin-top: 20px;
+}
+
+h4{
+  margin-left: 110px;
+  color: var(--color_Text);
+  margin-top: 0.4rem;
+}
+.input_form{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180%;
+  height: 100%;
+  border: 2px solid var(--border-input);
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  padding: 0px 20px;
+  margin: -10px 183px;
+  background: none;
+  outline: none;
+}
+
+.input_form:hover{
+  border-color: var(--Hover-border-input);
+}
+.input_form:focus{
+  border-color: rgb(30, 74, 196);
+}
+.label_form{
+  position: absolute;
+  left: 12rem;
+  top: 0.4rem;
+  padding: 0 0.5rem;
+  color: var(--color_Text);
+  cursor: text;
+  transition: top 200ms ease-in,
+  left 200ms ease-in,
+  font-size 200ms ease-in;
+  background: var(--background_Laberform);
+}
+.input_form:focus ~ .label_form,
+.input_form:not(:placeholder-shown).input_form:not(:focus)~.label_form{
+     top: -0.9rem;
+     font-size: 0.8rem;
+     /* left: 0.5rem; */
+     color: rgb(42, 95, 241);
+}
+
+    /* Tarjetas Cards  */
+.Card{
+      margin: -45px 10px;
+}
+.card_header{
+  background: rgb(66, 66, 66);
+  border-radius: 6px 6px 0px 0px;
+  border: 1px solid rgb(126, 126, 126);
+  padding: 0px 20px;
+}
+h2{
+  color: #fff;
+  font-family: 'Roboto',sans-serif;
+  font-size: 22px;
+}
+.card_body{
+  border: 1px solid rgb(126, 126, 126);
+  background-color: rgb(66, 66, 66);
+  padding: 20px 20px;
+}
+.card_footer{
+  background: rgb(66, 66, 66);
+  border-radius: 0px 0px 6px 6px;
+  border: 1px solid rgb(126, 126, 126);
+  padding: 10px 20px;
+}
+
+  /* Barra Scroll */
+body::-webkit-scrollbar{
+    width: 7px;
+    background:var(--background);
+}
+body::-webkit-scrollbar-thumb{
+    background:  var(--background-color);
+}
+body::-webkit-scrollbar-thumb:hover{
+    background: rgb(120, 121, 121);
+}
+
+    /* Tabla */
+.table {
+  border-radius: 6px;
+  margin: 50px 10px;
+  border: 1px solid rgb(126, 126, 126);
+  background: var(----background_table);  
+  color: #fff;
+}
+
+thead th{
+  color: var(--color_textTitle_Thead);
+  background: rgb(65, 65, 65);
+  padding: 5px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgb(158, 158, 158);
+}
+tbody td, th{
+  background: rgb(145, 145, 145);
+  padding: 5px 0px;
+}
+
+      /* Responsive */
+@media (max-width:1040px){
+  .input_form{
+    width: 102%;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 183px;
   }
-  to {
-    transform: rotate(360deg);
+  h4{
+    margin-left: 110px;
+    font-size: 17px;
+  }
+  .label_form{
+    position: absolute;
+    left: 13rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+}
+
+@media (max-width:1024px){
+  .input_form{
+    width: 102%;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 183px;
+  }
+  h4{
+    margin-left: 110px;
+    font-size: 17px;
+  }
+  .label_form{
+    position: absolute;
+    left: 12rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+}
+@media(max-width:980px){
+  .input_form{
+    width: 97%;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 168px;
+  }
+  h4{
+    margin-left: 83px;
+    font-size: 17px;
+  }
+  .label_form{
+    position: absolute;
+    left: 12rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+}
+
+@media(max-width:880px){
+  .input_form{
+    width: 97%;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 168px;
+  }
+  h4{
+    margin-left: 83px;
+    font-size: 17px;
+  }
+  .label_form{
+    position: absolute;
+    left: 12rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+}
+
+@media(max-width:740px){
+  .input_form{
+    width: 80%;
+    height: 100%;
+    border: 2px solid var(--border-input);
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 140px;
+  }
+  h4{
+    margin-left: 57px;
+    font-size: 17px;
+  }
+  .label_form{
+    position: absolute;
+    left: 10rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+  .btn_eliminar{
+    margin-top: 4px;
+  }
+}
+
+@media(max-width:590px){
+  .App {
+    width: 98%;
+    margin-left: 6px; 
+  }
+}
+@media(max-width:540px){
+  .App {
+    width: 105%;
+    margin-left: 6px; 
+  }
+  .table {
+    margin: 50px 7px;
+  }
+}
+
+@media(max-width:450px){
+  .App {
+    width: 125%;
+    margin-left: 6px; 
+  }
+  .table {
+    margin: 50px 7px;
+  }
+
+}
+@media(max-width:412px){
+  .App {
+    width: 137%;
+    margin-left: 6px; 
+  }
+  .table {
+    margin: 50px 7px;
+  }
+}
+
+@media(max-width:393px){
+  .App {
+    width: 145%;
+    margin-left: 6px; 
+  }
+  .table {
+    margin: 50px 7px;
+    
+  }
+  .input_form{
+    width: 80%;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 70px;
+  }
+  h4{
+    margin-left: -7px;
+    font-size: 16px;
+  }
+  .label_form{
+    position: absolute;
+    left: 5rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+} 
+
+@media(max-width:360px){
+  .App {
+    width: 164%;
+    margin-left: -2px; 
+  }
+  .input_form{
+    width: 90%;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    padding: 0px 20px;
+    margin: -10px 90px;
+  }
+  h4{
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  .label_form{
+    position: absolute;
+    left: 6rem;
+    top: 0.4rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+    background: var(--background_Laberform);
+  }
+}
+
+@media(max-width:280px){
+  .App {
+    width: 201%;
+    margin-left: -2px; 
   }
 }
